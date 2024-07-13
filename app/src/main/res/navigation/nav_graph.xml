@@ -3,26 +3,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/start_page">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.spacegame.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/start_page"
+        android:name="com.example.spacegame.StartPage"
+        android:label="@string/start_page_label"
+        tools:layout="@layout/start_page">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_start_page_to_games_page"
+            app:destination="@id/games_page" />
+        <action
+            android:id="@+id/action_start_page_to_about_page"
+            app:destination="@id/about_page" />
+        <action
+            android:id="@+id/action_start_page_to_settings_page"
+            app:destination="@id/settings_page" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.spacegame.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/games_page"
+        android:name="com.example.spacegame.GamesPage"
+        android:label="@string/games_page_label"
+        tools:layout="@layout/games_page">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_games_page_to_start_page"
+            app:destination="@id/start_page" />
+    </fragment>
+    <fragment
+        android:id="@+id/about_page"
+        android:name="com.example.spacegame.AboutPage"
+        android:label="@string/about_page_label"
+        tools:layout="@layout/about_page">
+
+        <action
+            android:id="@+id/action_about_page_to_start_page"
+            app:destination="@id/start_page" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings_page"
+        android:name="com.example.spacegame.SettingsPage"
+        android:label="@string/settings_page_label"
+        tools:layout="@layout/settings_page">
+
+        <action
+            android:id="@+id/action_settings_page_to_start_page"
+            app:destination="@id/start_page" />
     </fragment>
 </navigation>

@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.spacegame.databinding.FragmentSecondBinding;
+import com.example.spacegame.databinding.SettingsPageBinding;
 
-public class SecondFragment extends Fragment {
+public class SettingsPage extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private SettingsPageBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = SettingsPageBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,9 +29,9 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(v ->
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment)
+        binding.buttonBack.setOnClickListener(v ->
+                NavHostFragment.findNavController(SettingsPage.this)
+                        .navigate(R.id.action_settings_page_to_start_page)
         );
     }
 
