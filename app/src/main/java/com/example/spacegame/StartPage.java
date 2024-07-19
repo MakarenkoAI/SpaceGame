@@ -11,42 +11,33 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.spacegame.databinding.StartPageBinding;
 
-public class StartPage extends Fragment {
+public class StartPage extends Fragment
+{
 
     private StartPageBinding binding;
 
     @Override
-    public View onCreateView(
-            @NonNull LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
 
         binding = StartPageBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
+    {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonGames.setOnClickListener(v ->
-                NavHostFragment.findNavController(StartPage.this)
-                        .navigate(R.id.action_start_page_to_games_page)
-        );
-        binding.buttonSettings.setOnClickListener(v ->
-                NavHostFragment.findNavController(StartPage.this)
-                        .navigate(R.id.action_start_page_to_settings_page)
-        );
-        binding.buttonAbout.setOnClickListener(v ->
-                NavHostFragment.findNavController(StartPage.this)
-                        .navigate(R.id.action_start_page_to_about_page)
-        );
+        binding.buttonGames.setOnClickListener(v -> NavHostFragment.findNavController(StartPage.this).navigate(R.id.action_start_page_to_games_page));
+        binding.buttonSettings.setOnClickListener(v -> NavHostFragment.findNavController(StartPage.this).navigate(R.id.action_start_page_to_settings_page));
+        binding.buttonAbout.setOnClickListener(v -> NavHostFragment.findNavController(StartPage.this).navigate(R.id.action_start_page_to_about_page));
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroyView()
+    {
         super.onDestroyView();
         binding = null;
     }
-
 }

@@ -11,32 +11,30 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.spacegame.databinding.AboutPageBinding;
 
-public class AboutPage extends Fragment {
+public class AboutPage extends Fragment
+{
 
     private AboutPageBinding binding;
 
     @Override
-    public View onCreateView(
-            @NonNull LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
 
         binding = AboutPageBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
+    {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonBack.setOnClickListener(v ->
-                NavHostFragment.findNavController(AboutPage.this)
-                        .navigate(R.id.action_about_page_to_start_page)
-        );
+        binding.buttonBack.setOnClickListener(v -> NavHostFragment.findNavController(AboutPage.this).navigate(R.id.action_about_page_to_start_page));
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroyView()
+    {
         super.onDestroyView();
         binding = null;
     }
